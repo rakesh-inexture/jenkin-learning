@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh "pip install -r requirements.txt"
+                sh "cd content"
                 sh "python3 content/main.py"
             }
         }
