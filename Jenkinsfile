@@ -10,14 +10,12 @@ pipeline {
         stage('Build') {
             steps {
                 sh "pip install -r requirements.txt"
-                sh "cd content"
-                sh "python3 content/main.py"
+                sh "python3 main.py"
             }
         }
         stage('Test') {
             steps {
-                sh "cd tests"
-                sh "python3 tests/test_func.py"
+                sh "python3 -m pytest"
             }
         }
     }
