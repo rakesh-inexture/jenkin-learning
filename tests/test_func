@@ -2,7 +2,7 @@ from .main import *
 
 
 def test_add():
-  assert add_num(2,4)==6
+  assert add_num(3,4)==7
 
 def test_sub():
   assert sub_num(6,4)==2
