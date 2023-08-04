@@ -16,7 +16,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh "cd tests"
-                sh "python3 test_func.py"
+                sh "python3 tests/test_func.py"
             }
         }
     }
