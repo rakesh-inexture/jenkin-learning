@@ -19,4 +19,13 @@ pipeline {
             }
         }
     }
+    post{
+        always
+        {
+            script{
+                        slackSend channel: "#jenkins", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
+
+            }
+        }
+    }
 }
