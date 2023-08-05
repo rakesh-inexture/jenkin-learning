@@ -22,8 +22,6 @@ pipeline {
     post {
         always {
             script {
-                echo "Debug: baseUrl - ${baseUrl}, teamDomain - ${teamDomain}, channel - ${channel}, tokenCredentialId - ${tokenCredentialId}"
-
                 slackSend channel: "#jenkins", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
             }
         }
