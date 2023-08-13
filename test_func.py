@@ -1,8 +1,9 @@
-from main import add_num, sub_num
+from fastapi.testclient import TestClient
+from app import app
 
+client = TestClient(app)
 
-def test_add():
-  assert add_num(6,6)==12
-
-def test_sub():
-  assert sub_num(6,4)==2
+def test_read_main():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"message": "HELLO WORLD"}
