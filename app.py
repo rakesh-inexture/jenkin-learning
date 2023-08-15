@@ -3,7 +3,6 @@ import uvicorn
 
 app = FastAPI()
 
-
 @app.get("/")
 async def signin(request:Request):
     return {"message": "HELLO WORLD"}
